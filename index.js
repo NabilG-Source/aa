@@ -1,5 +1,6 @@
 const express = require("express");
 const session = require("express-session");
+const path = require("path");
 const appExpress = express();
 
 const filesystem = require("fs");
@@ -15,7 +16,7 @@ appExpress.use(session({
   secret: 'gaddjlkasadyfallksfadigyksj272478kde', // ganti dengan kunci rahasia yang kuat
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false } // gunakan true jika menggunakan https
+  store: new session.MemoryStore()
 }));
 
 appExpress.set("view engine", "ejs");
@@ -27,20 +28,13 @@ appExpress.get("/", (req, res) => {
 });
 
 // Check apakah registeredAccount.json ada
-if (!filesystem.existsSync("./public/database/registeredAccount.json")) {
-  const create = [];
-  filesystem.writeFileSync(
-    "./public/database/registeredAccount.json",
-    JSON.stringify(create, null, 2)
-  );
-}
 
 // Render login.ejs
 appExpress.get("/login", (req, res) => {
   // load registered account using loadRegistered function from
   // jsonFunction.js
   const registeredAccount = loadRegistered(
-    "./public/database/registeredAccount.json",
+    "public/database/registeredAccount.json",
     "utf-8"
   );
 
@@ -53,7 +47,7 @@ appExpress.get("/login", (req, res) => {
 appExpress.post("/login/", (req, res) => {
   const { emailUser, passwordUser } = req.body;
   const registeredAccount = loadRegistered(
-    "./public/database/registeredAccount.json",
+    "public/database/registeredAccount.json",
     "utf-8"
   );
 
@@ -81,7 +75,7 @@ appExpress.get("/login/status/:status", checkLogin, (req, res) => {
   const statusLogin = req.params.status;
 
   if (statusLogin === "success") {
-    req.json({ status: "success", message: "Login Succesfully Validated" });
+    res.json({ status: "success", message: "Login Succesfully Validated" });
     res.send()
   } else {
     res.json({ status: "failed", message: "Login Failed, Failed to validating user account"});
