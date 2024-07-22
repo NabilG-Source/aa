@@ -1,0 +1,72 @@
+[
+    {
+        "country": "Afghanistan",
+        "username": "user_afghanistan",
+        "email": "user_afghanistan@example.com",
+        "pass": "password123",
+        "nohp": "+930123456789"
+    },
+    {
+        "country": "Albania",
+        "username": "user_albania",
+        "email": "user_albania@example.com",
+        "pass": "password123",
+        "nohp": "+355123456789"
+    },
+    {
+        "country": "Algeria",
+        "username": "user_algeria",
+        "email": "user_algeria@example.com",
+        "pass": "password123",
+        "nohp": "+213123456789"
+    },
+    {
+        "country": "Andorra",
+        "username": "user_andorra",
+        "email": "user_andorra@example.com",
+        "pass": "password123",
+        "nohp": "+376123456789"
+    },
+    {
+        "country": "Angola",
+        "username": "user_angola",
+        "email": "user_angola@example.com",
+        "pass": "password123",
+        "nohp": "+244123456789"
+    },
+    {
+        "country": "Antigua and Barbuda",
+        "username": "user_antigua",
+        "email": "user_antigua@example.com",
+        "pass": "password123",
+        "nohp": "+1268123456789"
+    },
+    {
+        "country": "Argentina",
+        "username": "user_argentina",
+        "email": "user_argentina@example.com",
+        "pass": "password123",
+        "nohp": "+541123456789"
+    },
+    {
+        "country": "Armenia",
+        "username": "user_armenia",
+        "email": "user_armenia@example.com",
+        "pass": "password123",
+        "nohp": "+374123456789"
+    },
+    {
+        "country": "Australia",
+        "username": "user_australia",
+        "email": "user_australia@example.com",
+        "pass": "password123",
+        "nohp": "+61123456789"
+    },
+    {
+        "country": "Austria",
+        "username": "user_austria",
+        "email": "user_austria@example.com",
+        "pass": "password123",
+        "nohp": "+43123456789"
+    }
+]

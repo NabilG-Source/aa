@@ -1,0 +1,41 @@
+<%- include('layouts/header') %>
+<%- include('layouts/nav') %>
+
+<div class="loginContainer bg-login">
+
+<div class="img-mobile">
+    <img src="../public/img/eighter.png" alt="" width="200">
+</div>
+
+    <nav>
+        <ul>
+            <li><a href="/home"><img src="../public/img/eighter.png" alt="" width="70"></a></li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">Join</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <p class="cTitle1">Login ke eighter contact</p>
+        <h2 class="cTitle2">Login ke akun anda<span style="color: #1D90F5;">.</span></h2>
+        <p class="cTitle3">Belum memiliki akun? <a style="color: #1D90F5;" href="/register">Register</a></p>
+    
+        <form class="loginForm" action="/login/" method="POST">
+            <div class="login-field">
+              <input type="email" id="input-email" name="emailUser" placeholder="Email" required>
+              <span class="ic"><i class="fa-solid fa-at"></i></span>
+            </div>
+            <div class="login-field">
+              <input type="password" id="input-password" name="passwordUser" placeholder="Password" required>
+              <span class="ic pass"><i class="fa-solid fa-eye"></i></span>
+            </div>
+            <div class="login-button">
+              <button type="button" class="cMethods">Change method</button>
+              <input type="submit" id="submiter" value="Login to Eighter">
+            </div>
+          </form>
+    </div>
+   
+</div>
+
+<%- include('layouts/footer') %>
