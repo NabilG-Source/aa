@@ -3,8 +3,10 @@ const session = require("express-session");
 const path = require("path");
 const appExpress = express();
 
+appExpress.set("view engine", "ejs");
+appExpress.use(express.static("public"));
 const filesystem = require("fs");
-const { loadRegistered } = require("./jsonFunction");
+const { loadRegistered } = require("./public/database/jsonFunction");
 
 let ejs = require("ejs");
 const webPort = 3000;
@@ -19,8 +21,6 @@ appExpress.use(session({
   store: new session.MemoryStore()
 }));
 
-appExpress.set("view engine", "ejs");
-appExpress.use(express.static("./"));
 
 // Landing Page
 appExpress.get("/", (req, res) => {
@@ -34,7 +34,7 @@ appExpress.get("/login", (req, res) => {
   // load registered account using loadRegistered function from
   // jsonFunction.js
   const registeredAccount = loadRegistered(
-    "public/database/registeredAccount.json",
+    "./public/database/registeredAccount.json",
     "utf-8"
   );
 
@@ -47,7 +47,7 @@ appExpress.get("/login", (req, res) => {
 appExpress.post("/login/", (req, res) => {
   const { emailUser, passwordUser } = req.body;
   const registeredAccount = loadRegistered(
-    "public/database/registeredAccount.json",
+    "./public/database/registeredAccount.json",
     "utf-8"
   );
 
