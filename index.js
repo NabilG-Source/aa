@@ -33,14 +33,10 @@ appExpress.get("/", (req, res) => {
 appExpress.get("/login", (req, res) => {
   // load registered account using loadRegistered function from
   // jsonFunction.js
-  const registeredAccount = loadRegistered(
-    "./public/database/registeredAccount.json",
-    "utf-8"
-  );
+  
 
   res.render("login", {
-    title: "Login Page",
-    registeredAccount,
+    title: "Login Page"
   });
 });
 
